@@ -17,11 +17,12 @@ function AppContent() {
   const hideNavbar = authPages.includes(location.pathname);
 
   return (
-    <div className="bg-gray-300 shadow-xl h-screen">
-      <div className="mx-auto max-w-7xl shadow-xl bg-gray-500 lg:h-screen relative">
+    <div className="bg-gradient-to-r from-neutral-800 via-[#6e6352] to-neutral-800">
+    <div className="mx-auto max-w-7xl shadow-xl">
+      <div className="mx-auto max-w-7xl shadow-xl min-h-screen">
         {hideNavbar ? (
           // On the login/signup page, show the app name where navbar would be
-          <div className="flex justify-center items-center lg:h-14 md:h-14 h-16 bg-gray-600">
+          <div className="flex justify-center items-center lg:h-14 md:h-14 h-16 bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
             <h1 className="text-white text-4xl font-bold">ShelfLife</h1>
           </div>
         ) : (
@@ -37,6 +38,7 @@ function AppContent() {
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </div>
+    </div>
     </div>
   );
 }

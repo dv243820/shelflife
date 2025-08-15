@@ -49,8 +49,8 @@ function LoginPage() {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center h-[calc(100vh-4rem)] bg-blue-300">
-            <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden">
+        <div className="flex flex-col items-center justify-center h-[calc(100vh-3.5rem)] bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
+            <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden -mt-20">
                 <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign into your account</h1>
 
                 {/*Error message if something goes wrong*/}
