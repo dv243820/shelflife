@@ -2,14 +2,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 // Load environment variables
 require('dotenv').config();
 
+// Import routes
+const User = require('./models/user');
+const authRoutes = require('./routes/auth');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/auth', authRoutes);
 
 
 // Test route

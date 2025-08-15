@@ -1,14 +1,25 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 
 function Navbar() {
     const location = useLocation();
+    const [user, setUser] = useState(null);
+
+    // Get user data from localStorage on component mount
+    useEffect(() => {
+        const userData = localStorage.getItem('user');
+        if (userData) {
+            setUser(JSON.parse(userData));
+        }
+    }, []);
 
     return (
         <nav className="bg-gray-600 shadow-xl overflow-hidden ">
             <div className="lg:px-4 md:px-4 px-2 flex justify-between items-center lg:h-14 md:h-14 h-16 relative">
                 {/* Title button */}
                 <div className="flex-shrink-0 lg:block md:block hidden">
-                    <Link to="/home" className="text-white text-xl font-bold hover:text-gray-200">
+                    <Link to="/home" className="text-white text-3xl font-bold hover:text-gray-200">
                         ShelfLife
                     </Link>
                 </div>
@@ -53,10 +64,10 @@ function Navbar() {
                     </Link>
 
                 </div>
-                {/* User Settings */}
+                {/* User Info */}
                 <div className="flex-shrink-0 lg:block md:block hidden">
-                    <Link to="/settings" className="text-white text-xl font-bold hover:text-gray-200">
-                        User Settings
+                    <Link to="/settings" className="text-white text-xl font-medium hover:text-gray-200">
+                        {user ? `${user.username}` : 'User Settings'}
                     </Link>
                 </div>
             </div>
