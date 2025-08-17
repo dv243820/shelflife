@@ -26,7 +26,7 @@ function RegisterPage() {
         setError(null);
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,9 +55,9 @@ function RegisterPage() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-3.5rem)] bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
+        <div className="flex flex-col h-[calc(100vh-5.0rem)] items-center justify-center bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
             <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden">
-                <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Create an Account</h1>
+                <h1 className="text-2xl font-bold text-center mb-3 text-gray-800">Create an Account</h1>
 
                 {/*Error message if something goes wrong*/}
                 {error && (
@@ -89,7 +89,7 @@ function RegisterPage() {
                             value={formData.username}
                             onChange={handleChange}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
                             placeholder="john_doe1"
                         />
                     </div>
@@ -105,7 +105,7 @@ function RegisterPage() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
                             placeholder="youremail@domain.com"
                         />
                     </div>
@@ -123,7 +123,7 @@ function RegisterPage() {
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 mb-2"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b] mb-2"
                                 placeholder="Enter a password"
                             />
                         </div>
@@ -140,7 +140,7 @@ function RegisterPage() {
                                 required
                                 className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${formData.confirmPassword && formData.password !== formData.confirmPassword
                                     ? 'border-red-300 focus:ring-red-500'
-                                    : 'border-gray-300 focus:ring-green-500'
+                                    : 'border-gray-300 focus:ring-[#9a7e5b]'
                                     }`}
                                 placeholder="Re-enter your password"
                             />
@@ -153,7 +153,7 @@ function RegisterPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="w-full bg-gradient-to-r from-[#8a7151]/95 via-[#9a7e5b]/80 to-[#8a7151]/95 hover:bg-[#5a4b39]/80 hover:duration-200 font-semibold text-white py-2 px-4 rounded-md transition-colors"
                     >
                         {loading ? 'Creating Account...' : 'Register'}
                     </button>
@@ -164,7 +164,7 @@ function RegisterPage() {
                         Already have an account?
                         <button
                             onClick={() => navigate('/')}
-                            className="text-green-600 hover:text-green-800 ml-1 underline"
+                            className="text-[#a38053] hover:text-[#705c42] ml-1 underline"
                         >
                             Login here
                         </button>

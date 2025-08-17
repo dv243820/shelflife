@@ -15,7 +15,7 @@ function LoginPage() {
         setError(null);
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,9 +49,9 @@ function LoginPage() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-3.5rem)] bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
-            <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden -mt-20">
-                <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign into your account</h1>
+        <div className="flex flex-col h-[calc(100vh-5.0rem)] items-center justify-center bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
+            <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden">
+                <h1 className="text-2xl font-bold text-center mb-3 text-gray-800">Sign into your account</h1>
 
                 {/*Error message if something goes wrong*/}
                 {error && (
@@ -78,7 +78,7 @@ function LoginPage() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
                             placeholder="youremail@domain.com"
                         />
                     </div>
@@ -93,7 +93,7 @@ function LoginPage() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
                             placeholder="Your password"
                         />
                     </div>
@@ -101,9 +101,9 @@ function LoginPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="w-full bg-gradient-to-r from-[#8a7151]/95 via-[#9a7e5b]/80 to-[#8a7151]/95 hover:bg-[#5a4b39]/80 hover:duration-200 font-semibold text-white py-2 px-4 rounded-md transition-colors"
                     >
-                        {loading ? 'Logging in...' : 'Login'}
+                        {loading ? 'Signing in...' : 'Sign in'}
                     </button>
                 </form>
 
@@ -112,7 +112,7 @@ function LoginPage() {
                         Don't have an account?
                         <button
                             onClick={() => navigate('/register')}
-                            className="text-blue-600 hover:text-blue-800 ml-1 underline"
+                            className="text-[#a38053] hover:text-[#705c42] ml-1 underline"
                         >
                             Register here
                         </button>
