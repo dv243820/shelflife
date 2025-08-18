@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import '../App.css';
 
 function HomePage() {
     const navigate = useNavigate();
@@ -7,15 +8,17 @@ function HomePage() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-[calc(100vh-4rem)] bg-violet-300">
-            <h1 className="text-4xl font-bold mb-4 text-gray-800">Welcome to ShelfLife</h1>
-            <p className="text-lg mb-8 text-gray-600">This is the home page. Features to be added!</p>
-            <button 
-                onClick={handleLoginClick}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
-            >
-                Go to Login
-            </button>
+        <div className="flex flex-col h-[calc(100vh-5.0rem)] items-center justify-center bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
+            <div className="bg-white/75 p-4 rounded-lg shadow-lg flex flex-col items-center justify-center w-full max-w-md">
+                <h1 className="text-4xl font-bold mb-4 text-gray-800 amaranth-bold">Welcome to ShelfLife</h1>
+                <p className="text-lg mb-8 text-gray-600">This is the home page. Features to be added!</p>
+                <button
+                    onClick={handleLoginClick}
+                    className="w-2/5 btn-clr font-semibold text-white py-2 px-4 rounded-md transition-colors"
+                >
+                    Go to Login
+                </button>
+            </div>
         </div>
     );
 }

@@ -1,4 +1,6 @@
 # ShelfLife Web-app
+![Version](https://img.shields.io/badge/Version-0.1-purple) 
+
 Developed by Drew VanAtta - dv243820@ohio.edu
 
 ## Project Details
@@ -6,9 +8,9 @@ This project is a modern React application to help users track food inventory in
 
 ## Tech stack
 
-- **Frontend**: React 19 with Vite
+- **Frontend**: React 18 with Vite
 - **Styling**: Tailwind CSS
-- **Routing**: React Router v7
+- **Routing**: React Router v6
 - **Backend**: Node.js/Express
 - **Testing**: Vitest
 
@@ -17,7 +19,13 @@ This project is a modern React application to help users track food inventory in
 ```
 shelflife/
 ├── client/          # React frontend (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   └── routes/
+│   └── ...
 ├── server/          # Node.js backend
+│   ├── models/
+│   └── routes/
 └── package.json     # Root package management
 ```
 
@@ -72,14 +80,11 @@ npm run clean      # Clean build directories
 
 ## Environment Variables
 
-Create `.env.development` and `.env.production` files in the `/client` directory:
+Create `.env.development` and `.env.production` files in the `/client` directory for frontend settings.  
 
-```env
-# Development
-VITE_API_URL=http://localhost:5000
-VITE_NODE_ENV=development
-VITE_ENABLE_DEBUG=true
-```
+Create `.env` in the `/server` directory for backend settings.
+
+See `.env.example` in each directory for required variables.
 
 ## Features
 
