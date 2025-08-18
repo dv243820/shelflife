@@ -51,7 +51,7 @@ function LoginPage() {
     return (
         <div className="flex flex-col h-[calc(100vh-5.0rem)] items-center justify-center bg-gradient-to-r from-neutral-900/30 via-[#2b241b]/30 to-neutral-900/30">
             <div className="bg-white/75 p-8 rounded-lg shadow-lg w-full max-w-sm overflow-hidden">
-                <h1 className="text-2xl font-bold text-center mb-3 text-gray-800">Sign into your account</h1>
+                <h1 className="text-2xl font-bold text-center mb-6 amaranth-bold text-gray-800">Sign into your account</h1>
 
                 {/*Error message if something goes wrong*/}
                 {error && (
@@ -62,7 +62,7 @@ function LoginPage() {
                 {/*Loading indicator */}
                 {loading && (
                     <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded mb-4">
-                        Logging you in...
+                        Signing into your account...
                     </div>
                 )}
 
@@ -78,7 +78,7 @@ function LoginPage() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#9a7e5b]"
                             placeholder="youremail@domain.com"
                         />
                     </div>
@@ -93,7 +93,7 @@ function LoginPage() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#9a7e5b]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#9a7e5b]"
                             placeholder="Your password"
                         />
                     </div>
@@ -101,7 +101,7 @@ function LoginPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-gradient-to-r from-[#8a7151]/95 via-[#9a7e5b]/80 to-[#8a7151]/95 hover:bg-[#5a4b39]/80 hover:duration-200 font-semibold text-white py-2 px-4 rounded-md transition-colors"
+                        className="w-full btn-clr font-semibold text-white py-2 px-4 rounded-md transition-colors"
                     >
                         {loading ? 'Signing in...' : 'Sign in'}
                     </button>

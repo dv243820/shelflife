@@ -1,4 +1,3 @@
-
 /**
  * @file auth.js
  * @module routes/auth
@@ -13,7 +12,7 @@
  * @route POST /api/auth/register Registers a new user account.
  * @route POST /api/auth/login Authenticates a user and returns a JWT token.
  */
-// Import necessary modules
+
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
